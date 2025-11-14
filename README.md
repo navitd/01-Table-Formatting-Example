@@ -2,6 +2,16 @@
 
 A production-ready Python data processing solution that transforms raw telecom sector CSV data into standardized, professionally formatted Excel workbooks. This project demonstrates data manipulation, aggregation, and automated reporting capabilities.
 
+---
+
+## See It In Action
+
+**[View the Interactive Data Transformation Animation](./transformation_animation.html)**
+
+Open the animation to see a visual demonstration of how raw CSV data is transformed into aggregated, formatted results.
+
+---
+
 ## 📋 Project Overview
 
 This project showcases a simple ETL (Extract, Transform, Load) pipeline designed to handle complex telecom infrastructure data. The solution processes multi-company datasets with varying structures, consolidates them into a unified format, and generates professionally styled analytical reports.
