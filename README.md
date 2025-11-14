@@ -77,6 +77,23 @@ Raw CSV Data
 Formatted Excel Workbook
 ```
 
+## 📊 Data Transformation Visualization
+
+See the transformation process in action:
+
+<div align="center">
+  <a href="transformation_animation.html" target="_blank">
+    <img src="https://img.shields.io/badge/Click%20to%20View-Interactive%20Animation-blue?style=for-the-badge" alt="View Animation">
+  </a>
+</div>
+
+**Animation shows:**
+- **LEFT**: Raw CSV data with multiple rows per tower
+- **ARROW**: Data processing transformation
+- **RIGHT**: Aggregated and formatted output
+
+Open `transformation_animation.html` in your browser to see the animated transformation sequence.
+
 ### Input Data Structure
 
 The pipeline expects CSV files with the following fields:

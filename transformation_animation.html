@@ -1,0 +1,207 @@
+<html>
+<head>
+    <title>Data Transformation Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        
+        .animation-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 1000px;
+        }
+        
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .animation-row {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .table-section {
+            flex: 1;
+            opacity: 0;
+        }
+        
+        .table-section.input {
+            animation: slideIn 0.5s ease-in-out 0s forwards;
+        }
+        
+        .table-section.output {
+            animation: slideIn 0.5s ease-in-out 2s forwards;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .table-label {
+            font-weight: bold;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            font-size: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background-color: #002060;
+            color: white;
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+        
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+        
+        .arrow {
+            font-size: 48px;
+            color: #0064c8;
+            opacity: 0;
+            animation: bounce 1s ease-in-out 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                opacity: 0;
+                transform: translateX(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(10px);
+            }
+        }
+        
+        .description {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="animation-container">
+        <div class="title">📊 Data Transformation Process</div>
+        
+        <div class="animation-row">
+            <div class="table-section input">
+                <div class="table-label">INPUT: Raw CSV Data</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>record_id</th>
+                            <th>technology</th>
+                            <th>bandwidth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>E5015</td>
+                            <td>LTE</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>E5015</td>
+                            <td>LTE</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>E5015</td>
+                            <td>5G</td>
+                            <td>100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="arrow">→</div>
+            
+            <div class="table-section output">
+                <div class="table-label">OUTPUT: Aggregated Data</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tower ID</th>
+                            <th>Type</th>
+                            <th>4G_BW</th>
+                            <th>5G_BW</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>E5015</td>
+                            <td>Macro</td>
+                            <td>20</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>E0092</td>
+                            <td>Micro</td>
+                            <td>15</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>E0093</td>
+                            <td>Macro</td>
+                            <td>30</td>
+                            <td>50</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="description">
+            <strong>Transformation Logic:</strong><br>
+            ✓ Group rows by tower ID (record_id)<br>
+            ✓ Aggregate bandwidth by technology type (LTE → 4G)<br>
+            ✓ Classify towers as Micro (&lt;10m) or Macro (≥10m)<br>
+            ✓ Format and standardize column names
+        </div>
+    </div>
+</body>
+</html>
