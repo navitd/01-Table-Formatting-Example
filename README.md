@@ -6,9 +6,9 @@ A production-ready Python data processing solution that transforms raw telecom s
 
 ## See It In Action
 
-**[View the Interactive Data Transformation Animation](./transformation_animation.html)**
+**[View the Interactive Data Transformation Animation](https://htmlpreview.github.io/?https://github.com/navitd/01-Table-Formatting-Example/blob/main/transformation_animation.html)**
 
-Open the animation to see a visual demonstration of how raw CSV data is transformed into aggregated, formatted results.
+Click the link above to see a visual demonstration of how raw CSV data is transformed into aggregated, formatted results.
 
 ---
 
